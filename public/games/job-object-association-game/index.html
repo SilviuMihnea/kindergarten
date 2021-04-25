@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>Cunoasterea mediului - meserii</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="../../style/style.css" rel="stylesheet">
+    <script src="game.js"></script>
+</head>
+
+<body onload="initGame()">
+    <div class="background">
+        <img src="../../images/job-object-association-game/background-caption.png" class="background-caption">
+        <img src="../../images/job-object-association-game/question-mark.png" class="question-mark cursor-pointer" onclick="onQuestionMarkClicked()">
+    
+        <div class="job-section">
+            <img id="job" class="job-image">
+        </div>
+        <div class="object-section">
+            <img id="object-1" class="object-section-image cursor-pointer" onclick="onJobObjectClicked('object-1')">
+        </div>
+        <div class="object-middle-section">
+            <img id="object-2" class="object-section-image cursor-pointer" onclick="onJobObjectClicked('object-2')">
+        </div>
+        <div class="object-section">
+            <img id="object-3" class="object-section-image cursor-pointer" onclick="onJobObjectClicked('object-3')">
+        </div>
+    </div>
+</body>
+
+</html>
