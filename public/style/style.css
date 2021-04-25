@@ -1,3 +1,8 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
 .personal-character {
     width: 50px;
     height: auto;
@@ -6,4 +11,22 @@
 
 .row {
     display: flex;
+}
+
+.main-page-background {
+    height: 100%;
+    background-image: url("../images/main-page/mickey-mouse-welcome-page.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.button-start-evaluation {
+    margin-top: 20%;
+    margin-left: 20%;
+    margin-right: 5%;
 }
