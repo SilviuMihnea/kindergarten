@@ -1,0 +1,9 @@
+.personal-character {
+    width: 50px;
+    height: auto;
+    display: flex;
+}
+
+.row {
+    display: flex;
+}
