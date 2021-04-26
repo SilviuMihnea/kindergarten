@@ -26,6 +26,7 @@ function initJob() {
         if(!finished) {
             finished = true;
             saveScore('job-object-association-game', score);
+            sendResults(); // todo remove this line
             redirectToGame('object-count-game');
         }
     }
@@ -49,6 +50,7 @@ function onJobObjectClicked(id) {
     const element = document.getElementById(id);
     if (element.src.includes('correct')) {
         score += previousJob === currentJob ? 2.5 : 5;
+        console.log(score);
         initJob();
     }
     else {
