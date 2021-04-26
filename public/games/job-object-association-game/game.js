@@ -5,6 +5,7 @@ var currentJob = '';
 var isFirstTry = true;
 var score = 0;
 var previousJob = '';
+var finished = false;
 
 function initGame() {
     availableJobs = ['doctor', 'cook', 'gardener', 'fireman', 'mechanic'];
@@ -22,7 +23,11 @@ function initJob() {
         initJobObjects();
     }
     else {
-        // TODO: end game -> send score and navigate to the next page
+        if(!finished) {
+            finished = true;
+            saveScore('job-object-association-game', score);
+            redirectToGame('object-count-game');
+        }
     }
 }
 

@@ -1,31 +1,32 @@
-const counters = {};
-
-function startGame(name) {
-    counters[name] = new Date().getTime();
+function start(name) {
+    localStorage.setItem('date', new Date());
 }
 
-function endGame(name) {
-    const start = counters[name];
-    const end = new Date().getTime();
-    return end - start;
+async function login(image) {
+    // const identity = await fetch(`/login/${image}`, {method: 'POST'});
+    return localStorage.setItem("name", image);
 }
 
-function saveScoreLocally(game, score) {
-    return localStorage.setItem(game, JSON.stringify(score));
+function saveScore(game, score) {
+    localStorage.setItem(game, score);
 }
 
-function sendScore(game, score) {
-    const identity = localStorage.getItem("identity");
-    return fetch(`/results/${identity}/${game}`, {
+function redirect(nextPage) {
+    document.location = nextPage;
+}
+
+function redirectToGame(nextPage) {
+    redirect( `../../results.html?next=${nextPage}`);
+}
+
+function sendResults() {
+    return fetch(`/api/results/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(score)
+        body: JSON.stringify({
+            ...localStorage
+        })
     });
-}
-
-async function login(image) {
-    const identity = await fetch(`/children/${image}`);
-    return localStorage.setItem("identity", identity);
 }

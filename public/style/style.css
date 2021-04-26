@@ -8,9 +8,13 @@ body {
 }
 
 .personal-character {
-    width: 50px;
+    width: 150px;
     height: auto;
     display: flex;
+}
+
+.personal-character img {
+    width: 100%;
 }
 
 .row {
@@ -33,4 +37,50 @@ body {
     margin-top: 20%;
     margin-left: 20%;
     margin-right: 5%;
+}
+
+.results-page-background {
+    height: 100%;
+    background-image: url("../images/results-page/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.results {
+    font-size: 40px;
+    font-family: 'Pacifico', cursive;
+    color: rgb(255, 196, 0);
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+}
+
+.results-table,
+.results-table thead th,
+.results-table tbody td {
+    border: black solid 1px;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.results-table {
+    background-color: yellow;
+    font-size: 20px;
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    max-height: 400px;
+}
+
+.results-table thead th {
+    width: 90px;
+    height: 90px;
+}
+
+.results-table tbody td {
+    text-align: center;
 }

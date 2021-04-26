@@ -3,10 +3,32 @@
 
 <head>
     <title>Rezultate Copii</title>
+    <link href="./style/style.css" rel="stylesheet">
+    <script src="./scripts/client.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <button onclick="sendScore('alibaba', {score: 1000, time: 100});">Send results</button>
+<body
+>
+    <div class="results-page-background">
+        <div class="results">Rezultate</div>
+        <table class="results-table" >
+            <thead>
+                <tr>
+                    <th> Data Evaluării </th>
+                    <th> Nume </th>
+                    <th> Punctaj "Cifre" </th>
+                    <th> Punctaj "Ghicitori" </th>
+                    <th> Punctaj "Figuri Geometrice" </th>
+                    <th> Punctaj "Meserii" </th>
+                    <th> Punctaj total </th>
+                </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+        </table>
+    </div>
+    <script src="./scripts/results.js"></script>
 </body>
 
 </html>
