@@ -1,0 +1,74 @@
+#grad1 {
+    overflow: hidden;
+    height: 100vh;
+    background: rgb(251, 241, 167);
+    background: linear-gradient(0deg, rgba(251, 241, 167, 0.5889706224286589) 0%, rgba(245, 181, 181, 0.8858893899356618) 95%);
+}
+
+.superHeroImg{
+    width: 10%;
+    padding: 1%;
+}
+
+.superHeroImg:hover {
+    transform: scale(0.8, 0.8);
+}
+
+.superHeroesContainer{
+    margin-left: 28%;
+}
+
+
+.okHand{
+    margin-left: 90%;
+    position: absolute;
+    bottom: 0;
+}
+
+.okHand:hover {
+    transform: scale(0.8, 0.8);
+}
+
+.background-caption {
+    width: 20%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+
+input[type=text], select {
+    width: 40%;
+    height: 7%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 40%;
+    height: 7%;
+    background-color: #4CAF50;
+    color: rgb(238, 238, 238);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .name_div {
+    border-radius: 5px;
+    background-color: rgb(255, 228, 189);
+    padding: 20px;
+    position: absolute;
+    bottom: 4%;
+    right: 10%;
+  }

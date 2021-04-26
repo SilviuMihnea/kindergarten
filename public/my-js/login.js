@@ -1,0 +1,39 @@
+var BLOCKS_PER_CHART = 5;
+
+
+function generateChart(chartContainer) {
+  var container = document.createElement("div");
+  var text = "Hello World!";
+  var blockDiv, superHeroImg;  // used in the for loop
+
+  container.className = "superHeroesContainer";
+  document.getElementById(chartContainer.replace("#", "")).appendChild(container);
+  var imgCount = 0;
+  for(var i = 1; i <= 3; i++) {
+    blockDiv = document.createElement("div");
+    blockDiv.className = "div";
+    blockDiv.style = " flex-direction: row";
+      for(var j=1; j<= 8; j++){
+        imgCount= imgCount + 1;
+        superHeroImg = document.createElement("img");
+        superHeroImg.className = "superHeroImg";
+        superHeroImg.src ="../public/images/login/"+imgCount+".png";  // see note about browser compatibility
+        superHeroImg.style="size: 40%";
+        blockDiv.append(superHeroImg);
+      }
+    container.append(blockDiv);
+    if(imgCount == 24){
+        blockDiv4 = document.createElement("div");
+        blockDiv4.className = "div";
+        blockDiv4.style = " flex-direction: row";
+        imgCount= imgCount + 1;
+        superHeroImg = document.createElement("img");
+        superHeroImg.className = "superHeroImg";
+        superHeroImg.src ="../public/images/login/"+imgCount+".png";  // see note about browser compatibility
+        superHeroImg.style="size: 40%";
+        blockDiv4.append(superHeroImg);
+        container.append(blockDiv4);
+    }
+    
+  }
+}
