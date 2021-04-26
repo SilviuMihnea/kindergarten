@@ -11,7 +11,6 @@
     },
     {
         "date": "Mon Apr 26 2021 21:37:40 GMT+0300 (Eastern European Summer Time)",
-        "undefined": "undefined",
         "job-object-association-game": "25",
         "name": "Florina"
     },
@@ -21,19 +20,12 @@
         "date": "Mon Apr 26 2021 21:37:40 GMT+0300 (Eastern European Summer Time)"
     },
     {
-        "date": "Mon Apr 26 2021 21:37:40 GMT+0300 (Eastern European Summer Time)",
-        "undefined": "undefined",
-        "job-object-association-game": "25",
-        "name": "Amalia"
-    },
-    {
         "job-object-association-game": "25",
         "name": "Robi",
         "date": "Mon Apr 26 2021 21:37:40 GMT+0300 (Eastern European Summer Time)"
     },
     {
         "date": "Mon Apr 26 2021 21:37:40 GMT+0300 (Eastern European Summer Time)",
-        "undefined": "undefined",
         "job-object-association-game": "25",
         "name": "Tudorica"
     },
@@ -44,14 +36,17 @@
     },
     {
         "date": "Mon Apr 26 2021 21:37:40 GMT+0300 (Eastern European Summer Time)",
-        "undefined": "undefined",
         "job-object-association-game": "20",
         "name": "Ilie"
     },
     {
         "date": "Mon Apr 26 2021 21:37:40 GMT+0300 (Eastern European Summer Time)",
-        "undefined": "undefined",
         "job-object-association-game": "25",
         "name": "Fanel"
+    },
+    {
+        "date": "Mon Apr 26 2021 23:07:06 GMT+0300 (Eastern European Summer Time)",
+        "job-object-association-game": "22.5",
+        "name": "Silviu-Mihnea"
     }
 ]

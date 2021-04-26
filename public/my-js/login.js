@@ -17,7 +17,7 @@ function generateChart(chartContainer) {
         imgCount= imgCount + 1;
         superHeroImg = document.createElement("img");
         superHeroImg.className = "superHeroImg";
-        superHeroImg.src ="../public/images/login/"+imgCount+".png";  // see note about browser compatibility
+        superHeroImg.src ="../images/login/"+imgCount+".png";  // see note about browser compatibility
         superHeroImg.style="size: 40%";
         blockDiv.append(superHeroImg);
       }
@@ -29,11 +29,18 @@ function generateChart(chartContainer) {
         imgCount= imgCount + 1;
         superHeroImg = document.createElement("img");
         superHeroImg.className = "superHeroImg";
-        superHeroImg.src ="../public/images/login/"+imgCount+".png";  // see note about browser compatibility
+        superHeroImg.src ="../images/login/"+imgCount+".png";  // see note about browser compatibility
         superHeroImg.style="size: 40%";
         blockDiv4.append(superHeroImg);
         container.append(blockDiv4);
     }
     
   }
+}
+
+function onClickLogin() {
+  const text = document.getElementById('fname').value;
+  login(text);
+  start();
+  redirectToGame('job-object-association-game');
 }

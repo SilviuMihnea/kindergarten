@@ -1,10 +1,10 @@
-function start(name) {
+function start() {
     localStorage.setItem('date', new Date());
 }
 
-async function login(image) {
+async function login(name) {
     // const identity = await fetch(`/login/${image}`, {method: 'POST'});
-    return localStorage.setItem("name", image);
+    return localStorage.setItem("name", name);
 }
 
 function saveScore(game, score) {
@@ -15,7 +15,11 @@ function redirect(nextPage) {
     document.location = nextPage;
 }
 
-function redirectToGame(nextPage) {
+function redirectToGame(game) {
+    redirect(`/games/${game}/`);
+}
+
+function redirectToResults(nextPage) {
     redirect( `../../results.html?next=${nextPage}`);
 }
 
