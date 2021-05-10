@@ -1,5 +1,5 @@
 var BLOCKS_PER_CHART = 5;
-
+var superheroIndex = 0;
 
 function generateChart(chartContainer) {
   var container = document.createElement("div");
@@ -8,7 +8,7 @@ function generateChart(chartContainer) {
 
   container.className = "superHeroesContainer";
   document.getElementById(chartContainer.replace("#", "")).appendChild(container);
-  var imgCount = 0;
+  let imgCount = 0;
   for(var i = 1; i <= 3; i++) {
     blockDiv = document.createElement("div");
     blockDiv.className = "div";
@@ -19,6 +19,10 @@ function generateChart(chartContainer) {
         superHeroImg.className = "superHeroImg";
         superHeroImg.src ="../images/login/"+imgCount+".png";  // see note about browser compatibility
         superHeroImg.style="size: 40%";
+        superHeroImg.onclick = (event) => { 
+          const parts = event.target.currentSrc.split("/");
+          superheroIndex = parts[parts.length - 1];
+        };
         blockDiv.append(superHeroImg);
       }
     container.append(blockDiv);
@@ -40,7 +44,7 @@ function generateChart(chartContainer) {
 
 function onClickLogin() {
   const text = document.getElementById('fname').value;
-  login(text);
+  login(text, superheroIndex);
   start();
   redirectToGame('job-object-association-game');
 }

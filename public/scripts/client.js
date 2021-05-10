@@ -2,9 +2,9 @@ function start() {
     localStorage.setItem('date', new Date());
 }
 
-async function login(name) {
+async function login(name, superhero) {
     // const identity = await fetch(`/login/${image}`, {method: 'POST'});
-    return localStorage.setItem("name", name);
+    return Promise.all([localStorage.setItem("name", name), localStorage.setItem("superhero", superhero)]);
 }
 
 function saveScore(game, score) {

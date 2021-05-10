@@ -1,0 +1,90 @@
+.star-div {
+    text-align: center;
+}
+
+span {
+    opacity: 0;
+    position: relative;
+    animation: fade 2s ease-in 500ms forwards;
+}
+
+span:nth-child(2), span:nth-child(3) {
+    top: 3vw;
+    left: -0.5vw;
+    animation: fade 2s ease-in 1000ms forwards;
+}
+
+span:nth-child(3) {
+    animation: fade 2s ease-in 1500ms forwards;
+}
+
+span:nth-child(4) {
+    left: -1vw;
+    animation: fade 2s ease-in 2000ms forwards;
+}
+
+.star-image {
+    width: 8%;
+}
+
+.right-rotated-image {
+    transform: rotate(45deg);
+}
+
+.left-rotated-image {
+    transform: rotate(-45deg);
+    left: -1vw;
+}
+
+.mickey-animation {
+    animation: bounce 4s alternate forwards;
+    animation-delay: 3s;
+    opacity: 0;
+}
+
+.mickey-animation-image {
+    width: 20%;
+}
+
+.gift-gif, .decorated-superhero {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    z-index: -1;
+    opacity: 0;
+    animation: fade 3s;
+    animation-delay: 7s;
+}
+
+.decorated-superhero {
+    animation: fade 1s forwards;
+    animation-delay: 9s;
+    left: 32%;
+    top: 24%;
+}
+
+.gift-image {
+    width: 40%;
+}
+
+@keyframes bounce {
+    from {
+        margin-top: -100%;
+        opacity: 0;
+        margin-left: -20%;
+    }
+    to {
+        margin-top: 10%;
+        opacity: 1;
+        margin-left: 15%;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
