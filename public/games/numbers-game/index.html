@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>Cunoasterea formelor geometrice</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="../../style/style.css" rel="stylesheet">
+    <script src="game.js"></script>
+</head>
+
+<body onload="initGame()">
+<div class="background">
+    <img src="../../images/numbers-game/mickey.png" class="background-caption">
+    <img src="../../images/job-object-association-game/question-mark.png" class="question-mark cursor-pointer" onclick="onQuestionMarkClicked()">
+    <div class="objects">
+    </div>
+    <div class="numbers">
+        <img src="../../images/numbers-game/1.png" class="number" id="first" onclick="onFigureClicked()"/>
+        <img src="../../images/numbers-game/2.png" class="number" id="second" onclick="onFigureClicked()"/>
+        <img src="../../images/numbers-game/3.png" class="number" id="third" onclick="onFigureClicked()"/>
+    </div>
+</div>
+</body>
+
+</html>
