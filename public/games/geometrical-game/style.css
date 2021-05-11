@@ -1,0 +1,47 @@
+.background {
+    background-image: url("../../images/geometrical-game/background.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    top: -10%;
+}
+
+.background-caption {
+    width: 20%;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.question-mark {
+    position: absolute;
+    top: 0;
+    width: 10%;
+}
+
+.main-box {
+    align-items: center;
+    height: 100%;
+    display: inline-flex;
+    margin-left: 40vh;
+}
+.vertical-line {
+    border: solid 2px black;
+    height: 60vh;
+}
+
+.object-section {
+    text-align-last: center;
+    height: 35vh;
+    margin-left: 50px;
+}
+
+.object-section-image {
+    margin-right: 50px;
+    margin-top: 20px;
+    height: 100%;
+}
+
+.object-section-image:hover {
+    transform: scale(0.8,0.8);
+}
