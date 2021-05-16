@@ -49,17 +49,20 @@
 .objects {
     border-radius: 50%;
     border: solid 21px #000;
-    width: 20em;
-    height: 20em;
+    width: 25vw;
+    height: 25vw;
     right: 30%;
     bottom: 30%;
     position: absolute;
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position:center;
 }
 
 .numbers {
     border: solid 21px #000;
-    width: 20em;
-    height: 20em;
+    width: 25vw;
+    height: 25vw;
     left: 10%;
     bottom: 10%;
     position: absolute;
