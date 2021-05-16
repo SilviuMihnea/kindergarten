@@ -1,7 +1,7 @@
 const baseImagePath = "../../images/numbers-game";
 
-var availableObjects = ['apples', 'ball', 'people'];
-var correctAnswer = [3, 1, 2];
+var availableObjects = ['apples', 'ball', 'people', 'car'];
+var correctAnswer = [3, 1, 2, 1];
 var currentObject = -1;
 var score = 0;
 var isFirstTry = true;
