@@ -1,0 +1,20 @@
+.background {
+    background-image: url("../images/transition/background.png");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    text-align-last: center;
+}
+
+.board {
+    margin-top: 20vh;
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+}

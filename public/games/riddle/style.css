@@ -1,0 +1,42 @@
+.background {
+    background-image: url("../../images/job-object-association-game/background.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    top: -10%;
+}
+
+.background-caption {
+    width: 20%;
+    float: right;
+}
+
+.question-mark {
+    position: absolute;
+    top: 0;
+    width: 10%;
+}
+
+.job-section {
+    margin-top: 10%;
+    position: absolute;
+    margin-left: 20%;
+}
+
+.job-image {
+    width: 50%;
+}
+
+.object-section, .object-middle-section {
+    padding-top: 2%;
+    margin-left: 48%;
+    padding-bottom: 2%;
+}
+
+.object-section-image, .object-section-middle-image {
+    width: 20%;
+    border-color: yellow;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 10%;
+}
