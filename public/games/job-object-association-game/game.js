@@ -18,7 +18,6 @@ function initJob() {
         const index = getRandomInt(availableJobs.length);
         currentJob = availableJobs[index];
         availableJobs.splice(index, 1);
-
         document.getElementById('job').src = `${baseImagePath}/${currentJob}.png`;
         isFirstTry = true;
         initJobObjects();
@@ -51,6 +50,7 @@ function onJobObjectClicked(id) {
 
     if (element.src.includes('correct')) {
         score += isFirstTry ? 5 : 2.5;
+        // TODO: add voice message
         initJob();
     }
     else {
