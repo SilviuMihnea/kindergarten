@@ -1,4 +1,5 @@
 const baseImagePath = "../../images/numbers-game";
+const baseAudioPath = "../../audio/numbers-game";
 
 var availableObjects = ['apples', 'ball', 'people', 'car'];
 var correctAnswer = [3, 1, 2, 1];
@@ -20,6 +21,7 @@ function onFigureClicked(number) {
 	else
 	{
 		isFirstTry = false;
+		playAudio(`${baseAudioPath}/try-again.mp3`);
 	}
 	if (currentObject == availableObjects.length)
 	{
@@ -34,4 +36,18 @@ function setBackgroundImageForObjects() {
 
 function onQuestionMarkClicked() {
 	playAudioAndWaitToFinish("../../audio/mickey-story/07_eroul_tau_are_parte.m4a");
+}
+
+function sayNumber(number) {
+	if (number < 1 || number > 3)
+		return;
+	playAudio(`${baseAudioPath}/${number}.mp3`);
+}
+
+function playAudio(path) {
+	var audio = new Audio(path);
+	audio.play();
+	audio.onended = function() {
+		
+	};
 }
