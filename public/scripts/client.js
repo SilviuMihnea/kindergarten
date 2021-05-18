@@ -11,10 +11,10 @@ function saveScore(game, score) {
     localStorage.setItem(game, score);
 }
 
-function playSound(sound) {
+function playAudio(sound) {
     const audio = document.getElementById('audio') || createAudio();
     audio.src = sound;
-    audio.autoplay = true;
+    // audio.autoplay = true;
     audio.play();
 }
 

@@ -3,7 +3,6 @@ var superheroIndex = 0;
 
 function generateChart(chartContainer) {
   var container = document.createElement("div");
-  var text = "Hello World!";
   var blockDiv, superHeroImg;  // used in the for loop
 
   container.className = "superHeroesContainer";

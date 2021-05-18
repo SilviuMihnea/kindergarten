@@ -35,5 +35,5 @@ app.post('/api/login', async (req, res) => {
 });
 
 server.listen(8081, function () {
-    console.log(`Listening on ${server.address().port}`);
+    console.log(`go to http://localhost:8081/`);
 });

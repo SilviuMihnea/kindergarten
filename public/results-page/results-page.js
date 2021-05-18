@@ -24,5 +24,3 @@ async function load() {
     }
     tableBody.innerHTML = html;
 }
-
-load();

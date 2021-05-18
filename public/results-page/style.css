@@ -1,0 +1,55 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+.results-page-background {
+    height: 100%;
+    background-image: url("../images/results-page/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.results {
+    font-size: 40px;
+    font-family: 'Pacifico', cursive;
+    color: rgb(255, 196, 0);
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+}
+
+.results-table,
+.results-table thead th,
+.results-table tbody td {
+    border: black solid 1px;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.results-table {
+    background-color: yellow;
+    font-size: 20px;
+    position: absolute;
+    left: 35%;
+    top: 30%;
+    transform: translate(-50%, 0);
+    display: block;
+    max-height: 600px;
+    overflow-y: scroll;
+}
+
+.results-table thead th {
+    width: 90px;
+    height: 90px;
+}
+
+.results-table tbody td {
+    text-align: center;
+}
