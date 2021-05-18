@@ -6,23 +6,28 @@
     <link href="style.css" rel="stylesheet">
     <link href="../../style/style.css" rel="stylesheet">
     <script src="game.js"></script>
+    <script src="../../scripts/client.js"></script>
 </head>
 
 <body onload="initGame()">
-<div class="background">
-    <img src="../../images/geometrical-game/mickey_down.png" class="background-caption">
-    <img src="../../images/job-object-association-game/question-mark.png" class="question-mark cursor-pointer" onclick="onQuestionMarkClicked()">
+    <div class="background">
+        <img src="../../images/geometrical-game/mickey_down.png" class="background-caption">
+        <img src="../../images/job-object-association-game/question-mark.png" class="question-mark cursor-pointer"
+            onclick="onQuestionMarkClicked()">
 
-    <div class="main-box">
-        <div class="object-section">
-            <img id="object-1" class="object-section-image cursor-pointer" onclick="onFigureClicked('object-1')">
-        </div>
-        <div class="vertical-line"></div>
-        <div class="object-section">
-            <img id="object-2" class="object-section-image cursor-pointer" onclick="onFigureClicked('object-2')">
+        <div class="main-box">
+            <div class="object-section">
+                <img id="object-1" class="object-section-image cursor-pointer" onclick="onFigureClicked('object-1')">
+            </div>
+            <div class="vertical-line"></div>
+            <div class="object-section">
+                <img id="object-2" class="object-section-image cursor-pointer" onclick="onFigureClicked('object-2')">
+            </div>
         </div>
     </div>
-</div>
+    <script>
+        playAudioAndWaitToFinish("../../audio/mickey-story/09_eroul_ales_de_tine.m4a");
+    </script>
 </body>
 
 </html>

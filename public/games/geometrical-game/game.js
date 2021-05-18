@@ -21,7 +21,9 @@ function initJob() {
         initJobObjects();
     }
     else {
-        // TODO: end game -> send score and navigate to the next page
+        saveScore('geometrical-game', score);
+        sendResults();
+        redirectToResults()
     }
 }
 
@@ -47,12 +49,11 @@ function onFigureClicked(id) {
         if (isFirstTry)
             isFirstTry = false;
         else {
-            // TODO: add voice message
             initJob();
         }
     }
 }
 
 function onQuestionMarkClicked() {
-    // TODO: add voice message
+    playAudioAndWaitToFinish("../../audio/mickey-story/09_eroul_ales_de_tine.m4a");
 }

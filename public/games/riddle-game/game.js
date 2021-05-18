@@ -24,11 +24,10 @@ function initJob() {
         initJobObjects();
     }
     else {
-        if(!finished) {
+        if (!finished) {
             finished = true;
-            saveScore('job-object-association-game', score);
-            sendResults(); // todo remove this line
-            redirectToResults('object-count-game');
+            saveScore('riddle-game', score);
+            redirectToGame('geometrical-game');
         }
     }
 }
@@ -58,12 +57,12 @@ function onJobObjectClicked(id) {
             isFirstTry = false
         }
         else {
-            // TODO: add voice message
+
             initJob();
         }
     }
 }
 
 function onQuestionMarkClicked() {
-    // TODO: add voice message
+    playAudioAndWaitToFinish("../../audio/mickey-story/08_aventura_noastra.m4a");
 }

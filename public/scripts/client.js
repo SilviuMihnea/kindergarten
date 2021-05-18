@@ -1,3 +1,5 @@
+let finishedPlaying = true;
+
 function start() {
     localStorage.setItem('date', new Date());
 }
@@ -11,11 +13,29 @@ function saveScore(game, score) {
     localStorage.setItem(game, score);
 }
 
+function playAudioAndWaitToFinish(sound) {
+    if (finishedPlaying) {
+        const audio = getAudioElement();
+        
+        audio.onended = () => {
+            finishedPlaying = true;
+        }
+
+        finishedPlaying = false;
+        playAudio(sound);
+    }
+}
+
+
 function playAudio(sound) {
-    const audio = document.getElementById('audio') || createAudio();
+    const audio = getAudioElement();
     audio.src = sound;
     // audio.autoplay = true;
     audio.play();
+}
+
+function getAudioElement() {
+    return document.getElementById('audio') || createAudio();
 }
 
 function createAudio() {
@@ -34,7 +54,7 @@ function redirectToGame(game) {
 }
 
 function redirectToResults(nextPage) {
-    redirect( `../../results.html?next=${nextPage}`);
+    redirect(`../../results.html?next=${nextPage}`);
 }
 
 function sendResults() {

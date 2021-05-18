@@ -24,7 +24,7 @@ function onFigureClicked(number) {
 	if (currentObject == availableObjects.length)
 	{
 		saveScore('numbers-game', score);
-		redirectToResults('');
+		redirectToGame('riddle-game');
 	}
 }
 
@@ -33,4 +33,5 @@ function setBackgroundImageForObjects() {
 }
 
 function onQuestionMarkClicked() {
+	playAudioAndWaitToFinish("../../audio/mickey-story/07_eroul_tau_are_parte.m4a");
 }
