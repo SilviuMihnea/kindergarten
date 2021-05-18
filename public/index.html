@@ -4,17 +4,23 @@
 <head>
     <title>Minunata lume a lui Mickey Mouse si a prietenilor sai</title>
     <link href="./style/style.css" rel="stylesheet">
+    <script src="./scripts/client.js"></script>
 </head>
 
-<body>
+<body onload="var context = new AudioContext();">
     <div class="main-page-background">
-        <a href="login.html">
-            <img src="images/main-page/button-start-evaluation.JPG" alt="start" class="button-start-evaluation cursor-pointer">
+        <a href="./login-page/index.html">
+            <img src="images/main-page/button-start-evaluation.JPG" alt="start"
+                class="button-start-evaluation cursor-pointer">
         </a>
-        <a href="results.html">
+        <a href="./results-page/index.html">
             <img src="images/main-page/button-view-results.JPG" alt="results" class="cursor-pointer">
         </a>
     </div>
+    <script>
+        var context = new AudioContext();
+        playAudio("./audio/mickey-story/01_bine_te_am_gasit.m4a");
+    </script>
 </body>
 
 </html>

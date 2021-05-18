@@ -3,17 +3,18 @@
 
 <head>
     <title>Rezultate Copii</title>
-    <link href="./style/style.css" rel="stylesheet">
-    <script src="./scripts/client.js"></script>
+    <link href="../style/style.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    <script src="../scripts/client.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="./results-page.js"></script>
 </head>
 
-<body
->
+<body>
     <div class="results-page-background">
         <div class="results">Rezultate</div>
-        <table class="results-table" >
+        <table class="results-table">
             <thead>
                 <tr>
                     <th> Data Evaluării </th>
@@ -28,7 +29,9 @@
             <tbody id="results-body"></tbody>
         </table>
     </div>
-    <script src="./scripts/results.js"></script>
+    <script>
+        load();
+    </script>
 </body>
 
 </html>
