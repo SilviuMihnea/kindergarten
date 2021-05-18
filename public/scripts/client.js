@@ -11,6 +11,20 @@ function saveScore(game, score) {
     localStorage.setItem(game, score);
 }
 
+function playSound(sound) {
+    const audio = document.getElementById('audio') || createAudio();
+    audio.src = sound;
+    audio.autoplay = true;
+    audio.play();
+}
+
+function createAudio() {
+    const audio = document.createElement('audio');
+    audio.id = 'audio';
+    document.body.appendChild(audio);
+    return audio;
+}
+
 function redirect(nextPage) {
     document.location = nextPage;
 }
