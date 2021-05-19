@@ -10,14 +10,19 @@
 <body>
     <div class="background">
         <img src="../images/transition/transition.png" class="board">
-        <div class="stars"/>
+
+        <div class="stars">
+            <img src="../images/transition/star.png" class="star1 star">
+            <img src="../images/transition/star.png" class="star2 star">
+            <img src="../images/transition/star.png" class="star3 star">
+        </div>
     </div>
     <script>
         const query = parseQuery();
         const { nextPage, stars } = query;
-        setTimeout(() => {
-            redirectToGame(nextPage);
-        }, 3000);
+        // setTimeout(() => {
+        //     redirectToGame(nextPage);
+        // }, 3000);
         console.log(stars);
     </script>
 </body>
