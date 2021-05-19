@@ -6,9 +6,9 @@ async function load() {
     let html = '';
     for (const result of results) {
         const date = new Date(result.date);
-        const game1 = Number(result['job-object-association-game']);
-        const game2 = Number(result['job-object-association-game']);
-        const game3 = Number(result['job-object-association-game']);
+        const game1 = Number(result['numbers-game']);
+        const game2 = Number(result['riddle-game']);
+        const game3 = Number(result['geometrical-game']);
         const game4 = Number(result['job-object-association-game']);
         html += `
             <tr>
