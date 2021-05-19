@@ -29,7 +29,7 @@ function initJob() {
         if(!finished) {
             finished = true;
             saveScore('job-object-association-game', score);
-            redirectToGame('numbers-game');
+            redirectWithTransition('numbers-game', 1);
         }
     }
 }

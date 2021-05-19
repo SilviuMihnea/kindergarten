@@ -27,7 +27,7 @@ function initJob() {
         if (!finished) {
             finished = true;
             saveScore('riddle-game', score);
-            redirectToGame('geometrical-game');
+            redirectWithTransition('geometrical-game', 3);
         }
     }
 }

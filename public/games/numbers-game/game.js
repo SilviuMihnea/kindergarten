@@ -26,7 +26,7 @@ function onFigureClicked(number) {
 	if (currentObject == availableObjects.length)
 	{
 		saveScore('numbers-game', score);
-		redirectToGame('riddle-game');
+		redirectWithTransition('riddle-game', 2);
 	}
 }
 

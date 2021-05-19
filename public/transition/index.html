@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet">
     <link href="../style/style.css" rel="stylesheet">
+    <script src="../scripts/client.js"></script>
     <title>New level</title>
 </head>
 <body>
@@ -11,5 +12,13 @@
         <img src="../images/transition/transition.png" class="board">
         <div class="stars"/>
     </div>
+    <script>
+        const query = parseQuery();
+        const { nextPage, stars } = query;
+        setTimeout(() => {
+            redirectToGame(nextPage);
+        }, 3000);
+        console.log(stars);
+    </script>
 </body>
 </html>

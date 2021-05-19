@@ -27,7 +27,7 @@ function initJob() {
             finished = true;
             saveScore('geometrical-game', score);
             sendResults().then(r => console.log(r));
-            redirectToResults();
+            redirectWithTransition('reward-page', 4);
         }
     }
 }

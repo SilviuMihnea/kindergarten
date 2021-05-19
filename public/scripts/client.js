@@ -49,12 +49,16 @@ function redirect(nextPage) {
     document.location = nextPage;
 }
 
-function redirectToGame(game) {
-    redirect(`/games/${game}/`);
+function parseQuery() {
+    return Object.fromEntries(document.location.search.replace('?', "").split('&').map(str => str.split('=')));
 }
 
-function redirectToResults(nextPage) {
-    redirect(`../../results.html?next=${nextPage}`);
+function redirectWithTransition(nextPage, stars) {
+    redirect(`/transition/index.html?nextPage=${nextPage}&stars=${stars}`);
+}
+
+function redirectToGame(game) {
+    redirect(`/games/${game}/`);
 }
 
 function sendResults() {
