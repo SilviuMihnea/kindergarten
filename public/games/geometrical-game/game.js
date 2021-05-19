@@ -1,10 +1,11 @@
 const baseImagePath = "../../images/geometrical-game";
 
-var availableFigures = [];
-var currentFigure = '';
-var isFirstTry = true;
-var score = 0;
-var previousFigure = '';
+let availableFigures = [];
+let currentFigure = '';
+let isFirstTry = true;
+let score = 0;
+let previousFigure = '';
+let finished = false;
 
 function initGame() {
     availableFigures = ['first', 'second', 'third', 'fourth', 'fifth'];
@@ -12,6 +13,7 @@ function initGame() {
 }
 
 function initJob() {
+    previousFigure = currentFigure;
     if (availableFigures.length) {
         const index = getRandomInt(availableFigures.length);
         currentFigure = availableFigures[index];
@@ -21,9 +23,12 @@ function initJob() {
         initJobObjects();
     }
     else {
-        saveScore('geometrical-game', score);
-        sendResults();
-        redirectToResults()
+        if(!finished) {
+            finished = true;
+            saveScore('geometrical-game', score);
+            sendResults().then(r => console.log(r));
+            redirectToResults();
+        }
     }
 }
 
@@ -42,13 +47,15 @@ function getRandomInt(max) {
 function onFigureClicked(id) {
     const element = document.getElementById(id);
     if (element.src.includes('correct')) {
-        score += previousJob === currentJob ? 2.5 : 5;
+        score += isFirstTry ? 5 : 2.5;
+        playAudioAndWaitToFinish("../../audio/mickey-story/05_te_ai_descurcat_excelent.m4a");
         initJob();
     }
     else {
         if (isFirstTry)
             isFirstTry = false;
         else {
+            playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a");
             initJob();
         }
     }
