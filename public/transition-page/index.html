@@ -15,15 +15,25 @@
             <img src="../images/transition/star.png" class="star1 star">
             <img src="../images/transition/star.png" class="star2 star">
             <img src="../images/transition/star.png" class="star3 star">
+            <img src="../images/transition/star.png" class="star4 star">
         </div>
     </div>
     <script>
         const query = parseQuery();
         const { nextPage, stars } = query;
-        // setTimeout(() => {
-        //     redirectToGame(nextPage);
-        // }, 3000);
-        console.log(stars);
+        const actualStars = [...document.getElementsByClassName('star')];
+        for(let i in actualStars) {
+            if(i < stars - 1) {
+                actualStars[i].classList.add('visible-star');
+            } else if(i == stars - 1) {
+                actualStars[i].classList.add('active-star');
+            } else if(i > stars - 1) {
+                actualStars[i].classList.add('invisible-star');
+            }
+        }
+        setTimeout(() => {
+            redirectToGame(nextPage);
+        }, 4500);
     </script>
 </body>
 </html>

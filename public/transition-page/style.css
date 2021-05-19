@@ -7,32 +7,35 @@
     text-align-last: center;
 }
 
-.board {
-    margin-top: 25vh;
-    margin-left: 65vh;
+.board,
+.stars {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.stars {
-    width: 310px;
-    height: 100px;
-    margin-top: -20vh;
-    margin-left: 70vh;
-    animation-name: example;
-    animation-duration: 4s;
+.board {
+    height: 85%;
 }
 
 .star {
     height: 60px;
-    margin-top: 16px;
+    opacity: 0;
 }
 
-.star1{
-    margin-left: 30px;
+.active-star {
+    animation: fade 4s 0.5s forwards;
 }
-.star3 {
-    animation: fade 4s forwards;
-    animation-delay: 0.5s;
+
+.visible-star {
+    opacity: 1;
 }
+
+.invisible-star {
+    display: none;
+}
+
 @keyframes fade {
     from {
         opacity: 0;

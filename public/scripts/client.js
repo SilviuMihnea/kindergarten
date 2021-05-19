@@ -54,7 +54,7 @@ function parseQuery() {
 }
 
 function redirectWithTransition(nextPage, stars) {
-    redirect(`/transition/index.html?nextPage=${nextPage}&stars=${stars}`);
+    redirect(`/transition-page/index.html?nextPage=${nextPage}&stars=${stars}`);
 }
 
 function redirectToGame(game) {
