@@ -18,17 +18,19 @@
             <img id="job" class="job-image cursor-pointer">
         </div>
         <div class="object-section">
-            <img id="object-1" class="object-section-image cursor-pointer" onclick="onJobObjectClicked('object-1')">
+            <img id="object-1" class="object-section-image cursor-pointer">
         </div>
         <div class="object-middle-section">
-            <img onmouseover="console.log(12);" id="object-2" class="object-section-image cursor-pointer" onclick="onJobObjectClicked('object-2')">
+            <img id="object-2" class="object-section-image cursor-pointer">
         </div>
         <div class="object-section">
-            <img id="object-3" class="object-section-image cursor-pointer" onclick="onJobObjectClicked('object-3')">
+            <img id="object-3" class="object-section-image cursor-pointer">
         </div>
     </div>
     <script>
-        playAudioAndWaitToFinish("../../audio/mickey-story/04_intotdeanuna_mi_au_placut_copii.m4a");
+        playAudioAndWaitToFinish("../../audio/mickey-story/04_intotdeanuna_mi_au_placut_copii.m4a", () => {
+            ["object-1", "object-2", "object-3"].forEach(id => document.getElementById(id).onclick = () => onJobObjectClicked(id));
+        });
     </script>
 </body>
 

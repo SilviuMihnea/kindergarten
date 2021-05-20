@@ -60,24 +60,28 @@ function getRandomInt(max) {
 }
 
 function onJobObjectClicked(id) {
-    const element = document.getElementById(id);
+    if (finishedPlaying) {
+        const element = document.getElementById(id);
 
-    if (element.src.includes('correct')) {
-        score += isFirstTry ? 5 : 2.5;
-        playAudioAndWaitToFinish("../../audio/mickey-story/05_te_ai_descurcat_excelent.m4a");
-        initJob();
-    }
-    else {
-        if (isFirstTry) {
-            isFirstTry = false
+        if (element.src.includes('correct')) {
+            score += isFirstTry ? 5 : 2.5;
+            playAudioAndWaitToFinish("../../audio/mickey-story/05_te_ai_descurcat_excelent.m4a", () => initJob());
         }
         else {
-            playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a");
-            initJob();
+            if (isFirstTry) {
+                isFirstTry = false;
+                playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a");
+            }
+            else {
+                playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a", () => initJob());
+            }
         }
     }
 }
 
 function onQuestionMarkClicked() {
-    playAudioAndWaitToFinish("../../audio/mickey-story/04_intotdeanuna_mi_au_placut_copii.m4a");
+    ["object-1", "object-2", "object-3"].forEach(id => document.getElementById(id).removeAttribute("onclick"));
+    playAudioAndWaitToFinish("../../audio/mickey-story/04_intotdeanuna_mi_au_placut_copii.m4a", () => {
+        ["object-1", "object-2", "object-3"].forEach(id => document.getElementById(id).onclick = () => onJobObjectClicked(id));
+    });
 }

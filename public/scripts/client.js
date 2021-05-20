@@ -13,11 +13,12 @@ function saveScore(game, score) {
     localStorage.setItem(game, score);
 }
 
-function playAudioAndWaitToFinish(sound) {
+function playAudioAndWaitToFinish(sound, callback = () => {}) {
     if (finishedPlaying) {
         const audio = getAudioElement();
         
         audio.onended = () => {
+            callback();
             finishedPlaying = true;
         }
 
@@ -25,7 +26,6 @@ function playAudioAndWaitToFinish(sound) {
         playAudio(sound);
     }
 }
-
 
 function playAudio(sound) {
     const audio = getAudioElement();
@@ -71,4 +71,12 @@ function sendResults() {
             ...localStorage
         })
     });
+}
+
+function addClassName(elementId, classNames) {
+    document.getElementById(elementId).classList.add(classNames);
+}
+
+function removeClassName(elementId, classNames) {
+    document.getElementById(elementId).classList.remove(classNames);
 }

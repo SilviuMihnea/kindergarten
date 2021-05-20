@@ -12,11 +12,13 @@
 <body id="grad1" onload="generateChart('grad1')">
     <div class="background">
       <img src="../images/backgrounds/mickeyP.png" class="background-caption">
-      <img src="../images/backgrounds/okHandP.png" class="okHand" onclick="onClickLogin()">
+      <img id="loginButton" src="../images/backgrounds/okHandP.png" class="okHand">
       <input type="text" class="name_div" id="fname" name="firstname" placeholder="Numele tau...">
       </div>
       <script>
-          playAudio('../audio/mickey-story/03_alege_eroul.m4a');
+            playAudioAndWaitToFinish('../audio/mickey-story/03_alege_eroul.m4a', () => {
+                document.getElementById("loginButton").onclick = () => onClickLogin();
+            });
       </script>
 </body>
 </html>

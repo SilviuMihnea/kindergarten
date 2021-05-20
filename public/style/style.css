@@ -38,3 +38,29 @@ body {
     margin-left: 20%;
     margin-right: 5%;
 }
+
+.home-button {
+    position: absolute;
+    left: 0;
+    right: auto;
+    text-align: left;
+    top: 0;
+}
+
+.home-button-image {
+    width: 40%;
+    cursor: pointer;
+}
+
+.disabled-link {
+    pointer-events: none;
+}
+
+.invisible {
+    display: none;
+}
+
+.button-start {
+    width: 65%;
+    margin-left: 8%;
+}

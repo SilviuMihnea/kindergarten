@@ -45,8 +45,7 @@ function generateChart(chartContainer) {
           const parts = event.target.currentSrc.split("/");
           superheroIndex = parts[parts.length - 1];
           if (typeof(lastSelectedHero) !== "undefined"){
-          console.log("intram");
-          lastSelectedHero.style = "visibility: visible";
+            lastSelectedHero.style = "visibility: visible";
           }
           lastSelectedHero = event.target;
           event.target.style = "width: 10%;height: 10%;border-radius: 50%;background-color: rgb(255 235 235);box-shadow: rgb(255 235 235) 0px 0px 30px 20px, rgb(255 160 122) 0px 0px 30px 20px, rgb(255 140 0) 0px 0px 30px 20px;";

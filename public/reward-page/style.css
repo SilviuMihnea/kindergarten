@@ -67,19 +67,6 @@ span:nth-child(4) {
     width: 40%;
 }
 
-.home-button {
-    position: absolute;
-    right: 0;
-    left: auto;
-    text-align: right;
-    bottom: 0;
-}
-
-.home-button-image {
-    width: 40%;
-    cursor: pointer;
-}
-
 @keyframes bounce {
     from {
         margin-top: -100%;
