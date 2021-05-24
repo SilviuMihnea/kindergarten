@@ -6,48 +6,62 @@ var correctAnswer = [3, 1, 2, 1];
 var currentObject = -1;
 var score = 0;
 var isFirstTry = true;
+var canClick = false;
 
 function initGame() {
     setBackgroundImageForObjects();
+	playAudioWithClickLock("../../audio/mickey-story/07_eroul_tau_are_parte.m4a");
 }
 
 function onFigureClicked(number) {
+	if (!canClick)
+	{
+		return;
+	}
+	
 	if (number == correctAnswer[currentObject])
 	{
-		setBackgroundImageForObjects();
-		score += isFirstTry ? 5 : 2.5;
-		isFirstTry = true;
+		playAudioWithClickLock("../../audio/mickey-story/05_te_ai_descurcat_excelent.m4a", () =>
+		{
+			score += isFirstTry ? 5 : 2.5;
+			setBackgroundImageForObjects();
+		});
 	}
 	else
 	{
-		isFirstTry = false;
-		playAudio(`${baseAudioPath}/try-again.mp3`);
+		playAudioWithClickLock("../../audio/mickey-story/06_nu_te_descuraja.m4a", () =>
+		{
+			if (!isFirstTry)
+			{
+				setBackgroundImageForObjects();
+			}
+			isFirstTry = false;
+		});
 	}
 	if (currentObject == availableObjects.length)
 	{
+		alert(score);
 		saveScore('numbers-game', score);
 		redirectWithTransition('riddle-game', 2);
 	}
 }
 
 function setBackgroundImageForObjects() {
+	isFirstTry = true;
     document.getElementsByClassName("objects")[0].style.backgroundImage = `url(${baseImagePath}/${availableObjects[++currentObject]}.jpg)`;
 }
 
 function onQuestionMarkClicked() {
-	playAudioAndWaitToFinish("../../audio/mickey-story/07_eroul_tau_are_parte.m4a");
+	playAudioWithClickLock("../../audio/mickey-story/07_eroul_tau_are_parte.m4a");
 }
 
 function sayNumber(number) {
 	if (number < 1 || number > 3)
 		return;
-	playAudio(`${baseAudioPath}/${number}.mp3`);
+	playAudioWithClickLock(`${baseAudioPath}/${number}.mp3`);
 }
 
-function playAudio(path) {
-	var audio = new Audio(path);
-	audio.play();
-	audio.onended = function() {
-		
-	};
+function playAudioWithClickLock(audio, callback = () => {}) {
+	canClick = false;
+	playAudioAndWaitToFinish(audio, () => { canClick = true; callback(); });
 }
