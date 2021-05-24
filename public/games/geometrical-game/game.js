@@ -45,18 +45,21 @@ function getRandomInt(max) {
 }
 
 function onFigureClicked(id) {
+	if (!finishedPlaying)
+	{
+		return;
+	}
+	
     const element = document.getElementById(id);
     if (element.src.includes('correct')) {
         score += isFirstTry ? 5 : 2.5;
-        playAudioAndWaitToFinish("../../audio/mickey-story/05_te_ai_descurcat_excelent.m4a");
-        initJob();
+        playAudioAndWaitToFinish("../../audio/mickey-story/05_te_ai_descurcat_excelent.m4a", () => initJob());
     }
     else {
         if (isFirstTry)
             isFirstTry = false;
         else {
-            playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a");
-            initJob();
+            playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a", () => initJob());
         }
     }
 }
