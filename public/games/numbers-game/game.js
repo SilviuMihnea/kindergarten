@@ -14,6 +14,7 @@ function initGame() {
 }
 
 function onFigureClicked(number) {
+	debugger;
 	if (!finishedPlaying)
 	{
 		return;
@@ -37,15 +38,15 @@ function onFigureClicked(number) {
 		
 		playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a", () => initStage());
 	}
-	if (currentObject == availableObjects.length)
-	{
-		saveScore('numbers-game', score);
-		redirectWithTransition('riddle-game', 2);
-	}
 }
 
 function initStage() {
 	isFirstTry = true;
+	if (currentObject == availableObjects.length - 1)
+	{
+		saveScore('numbers-game', score);
+		redirectWithTransition('riddle-game', 2);
+	}
     document.getElementsByClassName("objects")[0].style.backgroundImage = `url(${baseImagePath}/${availableObjects[++currentObject]}.jpg)`;
 }
 
