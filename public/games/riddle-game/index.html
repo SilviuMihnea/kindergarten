@@ -9,7 +9,7 @@
     <script src="../../scripts/client.js"></script>
 </head>
 
-<body onload="initGame()">
+<body>
     <div class="background">
         <img src="../../images/job-object-association-game/background-caption.png" alt="" class="background-caption">
         <img src="../../images/job-object-association-game/question-mark.png" alt="" 
@@ -30,7 +30,7 @@
         </div>
     </div>
     <script>
-        playAudioAndWaitToFinish("../../audio/mickey-story/08_aventura_noastra.m4a");
+        getCurrentJob().then(r=> playAudioAndWaitToFinishAsync("../../audio/mickey-story/08_aventura_noastra.m4a", r));
     </script>
 </body>
 

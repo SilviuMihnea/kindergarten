@@ -1,3 +1,4 @@
+
 let finishedPlaying = true;
 
 function start() {
@@ -13,13 +14,34 @@ function saveScore(game, score) {
     localStorage.setItem(game, score);
 }
 
+async function playAudioAndWaitToFinishAsync(sound, sound2, callback = () => {}) {
+    if (finishedPlaying) {
+        const audio = getAudioElement();
+        audio.onended = () => {
+            audio.src=sound2;
+            audio.play();
+            audio.onended = () => {
+                callback();
+                finishedPlaying = true;
+            }
+            //callback();
+            //finishedPlaying = true;
+        }
+
+        finishedPlaying = false;
+        playAudio(sound);
+            
+        }
+    
+}
+
 function playAudioAndWaitToFinish(sound, callback = () => {}) {
     if (finishedPlaying) {
         const audio = getAudioElement();
         
         audio.onended = () => {
-            callback();
             finishedPlaying = true;
+            callback();
         }
 
         finishedPlaying = false;
