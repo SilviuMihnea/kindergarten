@@ -33,6 +33,7 @@ function onFigureClicked(number) {
 		if (isFirstTry)
 		{
 			isFirstTry = false;
+			playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a");
 			return;
 		}
 		

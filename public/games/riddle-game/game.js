@@ -77,7 +77,8 @@ function onJobObjectClicked(id) {
     }
     else {
         if (isFirstTry) {
-            isFirstTry = false
+            isFirstTry = false;
+			playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a");
         }
         else {
             playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a", () => initJob());
