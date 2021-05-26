@@ -8,12 +8,12 @@ var score = 0;
 var previousJob = '';
 var finished = false;
 
-function initGame() {
+async function initGame() {
     availableJobs = ['banana', 'fir', 'semaphore', 'bear', 'kite'];
     initJob();
 }
 
-function initJob() {
+async function initJob() {
     previousJob = currentJob;
     if (availableJobs.length) {
         const index = getRandomInt(availableJobs.length);
@@ -73,7 +73,10 @@ function onJobObjectClicked(id) {
 
     if (element.src.includes('correct')) {
         score += isFirstTry ? 5 : 2.5;
-        playAudioAndWaitToFinish("../../audio/mickey-story/05_te_ai_descurcat_excelent.m4a", () => initJob());
+        playAudioAndWaitToFinish("../../audio/mickey-story/05_te_ai_descurcat_excelent.m4a", () => {
+            initJob();
+            playAudioAndWaitToFinish(`${baseAudioPath}/${currentJob}.m4a`);
+        });
     }
     else {
         if (isFirstTry) {
@@ -81,11 +84,20 @@ function onJobObjectClicked(id) {
 			playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a");
         }
         else {
-            playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a", () => initJob());
+            playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a", () =>
+            {
+                initJob();
+                playAudioAndWaitToFinish(`${baseAudioPath}/${currentJob}.m4a`);
+            });
         }
     }
 }
 
 function onQuestionMarkClicked() {
     playAudioAndWaitToFinish("../../audio/mickey-story/08_aventura_noastra.m4a");
+}
+
+async function getCurrentJob(){
+    const result = await initGame()
+    return `${baseAudioPath}/${currentJob}.m4a`;
 }
