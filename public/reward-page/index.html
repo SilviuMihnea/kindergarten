@@ -22,10 +22,10 @@
             <img src="../images/reward-page/star.jpg" class="star-image left-rotated-image">
         </span>
     </div>
-    <div class="mickey-animation">
+    <div class="mickey-animation" id="mickey">
         <img src="../images/reward-page/mickey-animation.jpg" class="mickey-animation-image">
     </div>
-    <div class="gift-gif">
+    <div class="gift-gif" id="gift">
         <img src="../images/reward-page/gift.gif" class="gift-image">
     </div>
     <div class="decorated-superhero">
@@ -39,7 +39,16 @@
     <script src="reward-page.js"></script>
     <script src="../scripts/client.js"></script>
     <script>
-        playAudioAndWaitToFinish("../../audio/mickey-story/10_de_a_lungul.m4a");
+        if(calculateTotal() >= 75) {
+            console.log(calculateTotal());
+            document.getElementById('superhero').src = `../images/reward-page/decorated-superhero-${localStorage.getItem("superhero")}`;
+            playAudioAndWaitToFinish("../../audio/mickey-story/10_de_a_lungul.m4a");
+        }
+        else {
+            playAudioAndWaitToFinish("../../audio/mickey-story/11_nu_te_descuraja_final_urechi.m4a");
+            document.getElementById('mickey').style.display = 'none';
+            document.getElementById('gift').style.display = 'none';
+        }
     </script>
 </body>
 </html>

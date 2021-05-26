@@ -108,5 +108,5 @@ function calculateTotal() {
     const game2 = localStorage.getItem('riddle-game');
     const game3 = localStorage.getItem('geometrical-game');
     const game4 = localStorage.getItem('job-object-association-game');
-    return game1 + game2 + game3 + game4;
+    return -(0 - game1 - game2 - game3 - game4);
 }
