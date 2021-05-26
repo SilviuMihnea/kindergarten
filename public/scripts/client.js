@@ -75,8 +75,8 @@ function parseQuery() {
     return Object.fromEntries(document.location.search.replace('?', "").split('&').map(str => str.split('=')));
 }
 
-function redirectWithTransition(nextPage, stars) {
-    redirect(`/transition-page/index.html?nextPage=${nextPage}&stars=${stars}`);
+function redirectWithTransition(nextPage, stars, score) {
+    redirect(`/transition-page/index.html?nextPage=${nextPage}&stars=${stars}&score=${score}`);
 }
 
 function redirectToGame(game) {

@@ -20,8 +20,16 @@
     </div>
     <script>
         const query = parseQuery();
-        const { nextPage, stars } = query;
+        const { nextPage, stars, score } = query;
         const actualStars = [...document.getElementsByClassName('star')];
+
+        if(score > 0){
+            playAudio("../audio/mickey-story/12_ai_primit_1_steluta.m4a");
+        }
+        else {
+            playAudio("../audio/mickey-story/13_steluta_de_incurajare.m4a");
+        }
+
         for(let i in actualStars) {
             if(i < stars - 1) {
                 actualStars[i].classList.add('visible-star');
@@ -33,7 +41,7 @@
         }
         setTimeout(() => {
             redirectToGame(nextPage);
-        }, 4500);
+        }, 6000);
     </script>
 </body>
 </html>

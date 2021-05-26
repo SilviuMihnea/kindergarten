@@ -27,7 +27,7 @@ function initJob() {
             finished = true;
             saveScore('geometrical-game', score);
             sendResults().then(r => console.log(r));
-            redirectWithTransition(`../reward-page?friend=${calculateTotal() > 75}`, 4);
+            redirectWithTransition(`../reward-page?friend=${calculateTotal() > 75}`, 4, score);
         }
     }
 }
@@ -56,9 +56,10 @@ function onFigureClicked(id) {
         playAudioAndWaitToFinish("../../audio/mickey-story/05_te_ai_descurcat_excelent.m4a", () => initJob());
     }
     else {
-        if (isFirstTry)
+        if (isFirstTry){
             isFirstTry = false;
-			playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a");
+            playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a");
+        }
         else {
             playAudioAndWaitToFinish("../../audio/mickey-story/06_nu_te_descuraja.m4a", () => initJob());
         }

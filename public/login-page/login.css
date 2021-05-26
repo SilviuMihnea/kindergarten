@@ -22,7 +22,8 @@
 .okHand{
     margin-left: 90%;
     position: absolute;
-    bottom: 0;
+    bottom: 4%;
+    height: 100px;
 }
 
 .okHand:hover {

@@ -46,7 +46,7 @@ function initStage() {
 	if (currentObject == availableObjects.length - 1)
 	{
 		saveScore('numbers-game', score);
-		redirectWithTransition('riddle-game', 2);
+		redirectWithTransition('riddle-game', 2, score);
 	}
     document.getElementsByClassName("objects")[0].style.backgroundImage = `url(${baseImagePath}/${availableObjects[++currentObject]}.jpg)`;
 }

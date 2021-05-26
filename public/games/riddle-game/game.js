@@ -29,7 +29,7 @@ async function initJob() {
         if (!finished) {
             finished = true;
             saveScore('riddle-game', score);
-            redirectWithTransition('geometrical-game', 3);
+            redirectWithTransition('geometrical-game', 3, score);
         }
     }
 }
