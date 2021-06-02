@@ -24,7 +24,7 @@ function onFigureClicked(number) {
 	{
 		playAudioAndWaitToFinish("../../audio/mickey-story/05_te_ai_descurcat_excelent.m4a", () =>
 		{
-			score += isFirstTry ? 5 : 2.5;
+			score += isFirstTry ? 6.25 : 3.125;
 			initStage();
 		});
 	}
