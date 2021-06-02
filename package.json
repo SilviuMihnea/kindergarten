@@ -7,7 +7,8 @@
   },
   "bin": "index.js",
   "pkg": {
-    "assets": [ "node_modules/**/*", "src/**/*" ],
+    "scripts": [ "index.js" ],
+    "assets": [ "public/**/*"],
     "targets": [ "node12-macos-x64", "node10-win-x64" ]
   },
   "dependencies": {
